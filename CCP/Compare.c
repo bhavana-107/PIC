@@ -4,7 +4,7 @@
 
 void main(void) { 
     TRISB=0x00;
-    T3CON=0xF9;
+    T3CON=0xF9;         //Timer3 is the capture/compare clock source for both CCP and ECCP modules
     CCP1CON=0x0B;
     CCPR1L=0x30;
     CCPR1H=0xA2;
