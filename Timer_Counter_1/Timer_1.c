@@ -14,3 +14,26 @@ void main(void) {
     }
     return;
 }
+
+
+
+//Creating a Delay of 1 sec
+
+#include <xc.h>
+
+void main(void) {
+    TRISC=0x00;
+    T1CON=0xB1;
+    TMR1L=3036;
+    int i;
+    while(1){
+        for(i=0;i<10;i++){
+            while(TMR1IF==0);
+            TMR0L=3036;
+            TMR1IF=0;
+        }
+        
+        PORTC=~PORTC;
+    }
+    return;
+}
